@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import MyButton from '../Components/UI/MyButton/MyButton';
 
 const PostForm = ({ createPost }) => {
    const [post, setPost] = useState({ title: '', body: '', id: '' });
@@ -25,7 +26,7 @@ const PostForm = ({ createPost }) => {
             value={post.body}
             onChange={(e) => setPost({ ...post, body: e.target.value })}
          />
-         <button className='create__post' onClick={addNewPost}>Создати пост</button>
+         <MyButton onClick={addNewPost}>Добавити</MyButton>
       </form>
    )
 }
