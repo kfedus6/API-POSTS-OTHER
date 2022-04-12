@@ -47,6 +47,14 @@ text-decoration: none;
    align-items: center;
 }
 
+.post__btn {
+   display:flex;
+}
+
+.post__btn button {
+margin-left: 3px;
+}
+
 .title {
    text-align: center;
 }

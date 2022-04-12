@@ -8,7 +8,7 @@ const PostsFilter = ({ filter, setFilter }) => {
          <InputSearch
             value={filter.query}
             onChange={e => setFilter({ ...filter, query: e.target.value })}
-            placeholder='Пошук'
+            placeholder='Пошук...'
          />
          <SelectPosts
             value={filter.sort}
