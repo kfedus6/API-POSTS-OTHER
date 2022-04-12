@@ -10,6 +10,8 @@ import { useFetching } from '../hooks/useFetching';
 import { usePosts } from '../hooks/usePosts';
 import { getPageCount } from '../utils/pages';
 import Pagination from '../Components/UI/Pagination/Pagination';
+import { useAuth } from '../hooks/useAuth';
+
 
 const Posts = () => {
    const [posts, setPosts] = useState([]);
@@ -18,6 +20,8 @@ const Posts = () => {
    const [totalPages, setTotalPages] = useState(0);
    const [limit, setLimit] = useState(10);
    const [page, setPage] = useState(1);
+   const { persone } = useAuth();
+   const { accounts } = useAuth();
 
    const sorteaAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
@@ -33,7 +37,15 @@ const Posts = () => {
    }, [])
 
    const removePost = (post) => {
-      setPosts(posts.filter(p => p.id !== post.id))
+      accounts.map(item => {
+         if (item.login === persone) {
+            if (item.status === 'user') {
+               alert('У вас нет прав админа!')
+            } else {
+               setPosts(posts.filter(p => p.id !== post.id))
+            }
+         }
+      })
    }
 
    const createPost = (newPost) => {
