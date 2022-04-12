@@ -15,12 +15,12 @@ const App = () => {
          <Routes>
             <Route path='/' element={<Layout />}>
                <Route index element={<About />} />
-               <Route exact path='posts' element={
+               <Route path='posts' element={
                   <ReqiureAuth>
                      <Posts />
                   </ReqiureAuth>
                } />
-               <Route exact path='pageIdPost/:id' element={<PageIdPost />} />
+               <Route path='pageIdPost/:id' element={<PageIdPost />} />
                <Route path='login' element={<Login />} />
             </Route>
          </Routes>

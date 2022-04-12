@@ -128,3 +128,23 @@ font-weight: bold;
    opacity: 0;
    transition: all 1s ease-in;
  }
+
+.bloc__login {
+   margin-top: 20px;
+}
+
+.login {
+   width: 90%;
+   padding: 5px 15px;
+   margin: 5px 0;
+   border: 1px solid black;
+   background: transparent;
+}
+
+.password {
+   width: 90%;
+   padding: 5px 15px;
+   margin: 5px 0;
+   border: 1px solid black;
+   background: transparent;
+}

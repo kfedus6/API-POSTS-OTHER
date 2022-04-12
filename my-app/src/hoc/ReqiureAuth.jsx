@@ -9,7 +9,8 @@ const ReqiureAuth = ({ children }) => {
 
    if (persone === '') {
       return <Navigate to='/login' state={{ from: location }} />
-   } else {
+   }
+   else {
       return children
    }
 }
